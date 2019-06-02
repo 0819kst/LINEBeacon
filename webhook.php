@@ -1,13 +1,12 @@
 <?php
- 
-$accessToken = '9Qo0ZYAb7I2E2Mvpo/kvH6WyiymhsDlbC6WNRR49h38RPEST1BikeT6JVWY6XBmF42VBissR7FWnu9z0QZpO//6LEhVNbyRTBziUhHYuAEQ7RgbihBPHUKux37o8kloEckUNV9TvU7RzYX21VE9g7QdB04t89/1O/w1cDnyilFU=';
+ $accessToken = '9Qo0ZYAb7I2E2Mvpo/kvH6WyiymhsDlbC6WNRR49h38RPEST1BikeT6JVWY6XBmF42VBissR7FWnu9z0QZpO//6LEhVNbyRTBziUhHYuAEQ7RgbihBPHUKux37o8kloEckUNV9TvU7RzYX21VE9g7QdB04t89/1O/w1cDnyilFU=';
  $json_string = file_get_contents('php://input');
     $jsonObj = json_decode($json_string);
     $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};     //ReplyToken取得
     $userId = $jsonObj->{"events"}[0]->{"source"}->{"userId"};        //userId取得
     $eventType = $jsonObj->{"events"}[0]->{"type"};  //typeの取得
-$message_type = $json_object->{"events"}[0]->{"message"}->{"type"};    //メッセージタイプ
-$message_text = $json_object->{"events"}[0]->{"message"}->{"text"};    //メッセージ内容
+$message_type = $jsonObj->{"events"}[0]->{"message"}->{"type"};    //メッセージタイプ
+$message_text = $jsonObj->{"events"}[0]->{"message"}->{"text"};    //メッセージ内容
     if($eventType == "beacon"){
       ResponseLineText( $accessToken, $replyToken, "近くにビーコンがあります！！" );
     }
