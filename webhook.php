@@ -1,5 +1,5 @@
 <?php
- $accessToken = '9Qo0ZYAb7I2E2Mvpo/kvH6WyiymhsDlbC6WNRR49h38RPEST1BikeT6JVWY6XBmF42VBissR7FWnu9z0QZpO//6LEhVNbyRTBziUhHYuAEQ7RgbihBPHUKux37o8kloEckUNV9TvU7RzYX21VE9g7QdB04t89/1O/w1cDnyilFU=';
+ $accessToken = 'アクセストークン';
  $json_string = file_get_contents('php://input');
     $jsonObj = json_decode($json_string);
     $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};     //ReplyToken取得
